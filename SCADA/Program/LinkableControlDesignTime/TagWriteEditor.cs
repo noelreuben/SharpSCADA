@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -117,13 +117,13 @@ namespace HMIControl.VisualStudio.Design
             switch (sign)
             {
                 case "''":
-                    if (!string.IsNullOrEmpty(txt) && txt[0] != '\'' && txt[txt.Length - 1] != '\'')
+                    if (!string.IsNullOrEmpty(txt) && txt[0] != '\'' && txt[^1] != '\'')
                         coolTextBox1.Text = "'" + txt + "'";
                     else
                         coolTextBox1.Text = txt.Trim('\'');
                     break;
                 case "( )":
-                    if (!string.IsNullOrEmpty(txt) && txt[0] != '(' && txt[txt.Length - 1] != ')')
+                    if (!string.IsNullOrEmpty(txt) && txt[0] != '(' && txt[^1] != ')')
                         coolTextBox1.Text = "(" + txt + ")";
                     break;
                 case "+":

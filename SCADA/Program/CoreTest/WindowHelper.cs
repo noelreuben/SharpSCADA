@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -66,7 +66,7 @@ namespace CoreTest
                             }
                         }
                         var r = tagConn as ITagReader;
-                        var key = strs[strs.Length - 1];
+                        var key = strs[^1];
                         try
                         {
                             var action = r.SetTagReader(key, eval.Eval(v.Value));

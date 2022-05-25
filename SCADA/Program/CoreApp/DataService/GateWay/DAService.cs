@@ -1,4 +1,4 @@
-﻿using ClientDriver;
+using ClientDriver;
 using DatabaseLib;
 using DataService;
 using Microsoft.Extensions.Logging;
@@ -20,7 +20,7 @@ using System.Xml;
 namespace BatchCoreService
 {
 
-    public class DAService :  IDataServer, IAlarmServer
+    public class DAService : IDataServer, IAlarmServer
     {
         const int PORT = 6543;
 
@@ -180,10 +180,10 @@ namespace BatchCoreService
         {
             var loggerFactory = new LoggerFactory();
             Func<string, LogLevel, bool> filter = (category, level) => true;
-            loggerFactory.AddProvider( new ConsoleLoggerProvider(filter, false));
+            loggerFactory.AddProvider(new ConsoleLoggerProvider(filter, false));
             loggerFactory.AddProvider(new DebugLoggerProvider(filter));
             Log = loggerFactory.CreateLogger(SERVICELOGSOURCE);
-            InitServerByXml(); 
+            InitServerByXml();
             _scales = new List<Scaling>();
             _drivers = new SortedList<short, IDriver>();
             _alarmList = new List<AlarmItem>(ALARMLIMIT + 10);
@@ -1184,7 +1184,7 @@ namespace BatchCoreService
             var tempData = (HistoryData[])stateInfo;
             if (tempData.Length == 0) return;
             DateTime startTime = tempData[0].TimeStamp;
-            DateTime endTime = tempData[tempData.Length - 1].TimeStamp;
+            DateTime endTime = tempData[^1].TimeStamp;
             //Thread.Sleep(TimeSpan.FromMinutes(10));
             int count = 0;
             while (true)
