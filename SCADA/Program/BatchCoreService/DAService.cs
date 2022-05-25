@@ -399,7 +399,7 @@ namespace BatchCoreService
                 dataReader.NextResult();
                 while (dataReader.Read())
                 {
-                    AddDriver(dataReader.GetInt16(0), dataReader.GetNullableString(1), dataReader.GetNullableString(2),  dataReader.GetNullableString(3));
+                    AddDriver(dataReader.GetInt16(0), dataReader.GetNullableString(1), dataReader.GetNullableString(2), dataReader.GetNullableString(3));
                 }
 
                 dataReader.NextResult();

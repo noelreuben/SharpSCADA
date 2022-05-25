@@ -5,7 +5,7 @@ using System.Windows;
 namespace HMIControl
 {
     //[Startable]
-    public  class MagnetCleaner : HMIControlBase
+    public class MagnetCleaner : HMIControlBase
     {
         static MagnetCleaner()
         {
@@ -32,20 +32,20 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[2]
-                {  
+                {
                     new  LinkPosition(new Point(0.65,0),ConnectOrientation.Top),
                     new  LinkPosition(new Point(0.15,1),ConnectOrientation.Bottom),
                 };
         }
         public override string[] GetActions()
         {
-            return new string[] { TagActions.DEVICENAME, TagActions.VISIBLE, TagActions.ALARM,  TagActions.RUN };
+            return new string[] { TagActions.DEVICENAME, TagActions.VISIBLE, TagActions.ALARM, TagActions.RUN };
         }
         public override Action SetTagReader(string key, Delegate tagChanged)
         {
             switch (key)
             {
-               
+
             }
             return base.SetTagReader(key, tagChanged);
         }

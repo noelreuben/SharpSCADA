@@ -80,7 +80,7 @@ namespace HMIControl
                         brush4 = new RadialGradientBrush
                         {
                             GradientStops = new GradientStopCollection
-                        { 
+                        {
                             new GradientStop(Colors.Black,1),
                             new GradientStop(color1,0)
                         },

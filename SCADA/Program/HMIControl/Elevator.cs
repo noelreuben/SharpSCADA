@@ -65,7 +65,7 @@ namespace HMIControl
 
         public override string[] GetActions()
         {
-            return new string[] { TagActions.DEVICENAME, TagActions.VISIBLE, TagActions.CAPTION, TagActions.ALARM, "LowSpeed", "OverCurrent", TagActions.RUN, TagActions.AMPS, TagActions.SPEED, "跑偏" }; 
+            return new string[] { TagActions.DEVICENAME, TagActions.VISIBLE, TagActions.CAPTION, TagActions.ALARM, "LowSpeed", "OverCurrent", TagActions.RUN, TagActions.AMPS, TagActions.SPEED, "跑偏" };
         }
 
         public override Action SetTagReader(string key, Delegate tagChanged)

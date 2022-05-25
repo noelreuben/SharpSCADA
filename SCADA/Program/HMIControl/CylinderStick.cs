@@ -40,7 +40,7 @@ namespace HMIControl
 
         public override string[] GetActions()
         {
-            return new string[] { TagActions.VISIBLE, TagActions.CAPTION, TagActions.RUN }; 
+            return new string[] { TagActions.VISIBLE, TagActions.CAPTION, TagActions.RUN };
         }
 
         public override Action SetTagReader(string key, Delegate tagChanged)

@@ -22,7 +22,7 @@ namespace DataService
         [FieldOffset(0)]
         public uint DWord;
 
-        public static readonly Storage Empty ;
+        public static readonly Storage Empty;
 
         static Storage()
         {
@@ -70,7 +70,7 @@ namespace DataService
         public static bool operator !=(Storage x, Storage y)
         {
             return x.Int32 != y.Int32;
-        } 
+        }
     }
 
 }

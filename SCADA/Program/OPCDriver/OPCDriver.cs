@@ -211,7 +211,7 @@ namespace OPCDriver
                             pErrors += 4;
                         }
                     }
-                    catch(Exception err)
+                    catch (Exception err)
                     {
                         if (err.Message != null) { }
                     }
@@ -707,7 +707,7 @@ namespace OPCDriver
                             case DataType.FLOAT:
                                 if (vt == VarEnum.VT_UI2)
                                 {
-                                    ushort us =(ushort) Marshal.ReadInt16(pvValues + 8);
+                                    ushort us = (ushort)Marshal.ReadInt16(pvValues + 8);
                                     value.Single = Convert.ToSingle(us); ;
                                 }
                                 else
@@ -1094,7 +1094,7 @@ namespace OPCDriver
             if (IsClosed)
                 Connect();
             if (!_metaGroups.Exists(x => x.ID == id))
-                _metaGroups.Add(new MetaGroup { ID = id, Name = name, UpdateRate = updateRate, DeadBand = deadBand, Active = active }); 
+                _metaGroups.Add(new MetaGroup { ID = id, Name = name, UpdateRate = updateRate, DeadBand = deadBand, Active = active });
             if (_opcServer == null) return null;
             GCHandle hDeadband, hTimeBias;
             hDeadband = GCHandle.Alloc(deadBand, GCHandleType.Pinned);
@@ -1103,7 +1103,7 @@ namespace OPCDriver
             int serverId, svrUpdateRate; object grpObj;
             if (HRESULTS.Succeeded(_opcServer.AddGroup(name, active, updateRate, id,
                     hTimeBias.AddrOfPinnedObject(), hDeadband.AddrOfPinnedObject(), 0x0,
-                    out serverId, out svrUpdateRate, ref  iidRequiredInterface, out grpObj)))
+                    out serverId, out svrUpdateRate, ref iidRequiredInterface, out grpObj)))
             {
                 IConnectionPointContainer pIConnectionPointContainer = (IConnectionPointContainer)grpObj;
                 Guid iid = typeof(IOPCDataCallback).GUID;

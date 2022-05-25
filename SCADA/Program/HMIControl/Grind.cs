@@ -44,7 +44,7 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[2]
-                {  
+                {
                     new  LinkPosition(new Point(0.3,0),ConnectOrientation.Top),
                     new  LinkPosition(new Point(0.3,1),ConnectOrientation.Bottom),
                 };
@@ -59,7 +59,7 @@ namespace HMIControl
 
         public override string[] GetActions()
         {
-            return new string[] {"状态", TagActions.VISIBLE, TagActions.CAPTION, TagActions.AMPS, TagActions.DEVICENAME }; 
+            return new string[] { "状态", TagActions.VISIBLE, TagActions.CAPTION, TagActions.AMPS, TagActions.DEVICENAME };
         }
 
         public override Action SetTagReader(string key, Delegate tagChanged)
@@ -73,7 +73,7 @@ namespace HMIControl
                         return delegate { Status = (short)_funcStatus(); };
                     }
                     else return null;
-                
+
                 case TagActions.AMPS:
                     var _funcAmps = tagChanged as Func<float>;
                     if (_funcAmps != null)

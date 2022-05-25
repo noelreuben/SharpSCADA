@@ -31,12 +31,12 @@ namespace TagConfig
                 nmRWHI.Value = (decimal)_scale.RawHi;
                 nmRWLO.Value = (decimal)_scale.RawLo;
             }
-            
+
         }
 
         void Save()
         {
-            _tag.HasScale = (!rdNone.Checked) && (nmEUHI.Value > nmEULO.Value) && (nmRWHI.Value > nmRWLO.Value); 
+            _tag.HasScale = (!rdNone.Checked) && (nmEUHI.Value > nmEULO.Value) && (nmRWHI.Value > nmRWLO.Value);
             if (!_tag.HasScale)
             {
                 if (_scale != null)
@@ -53,7 +53,7 @@ namespace TagConfig
                 _scale.EUHi = (float)nmEUHI.Value;
                 _scale.EULo = (float)nmEULO.Value;
                 _scale.RawHi = (float)nmRWHI.Value;
-                _scale.RawLo=(float)nmRWLO.Value;
+                _scale.RawLo = (float)nmRWLO.Value;
             }
             _tag.HasScale = true;
         }

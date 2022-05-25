@@ -50,9 +50,9 @@ namespace HMIControl
                 case BorderStyle.FixedSingle:
                     drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
                     break;
-                //default:
-                //    drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
-                //    break;
+                    //default:
+                    //    drawingContext.DrawRectangle(this.Background, pen, new Rect(0, 0, width, height));
+                    //    break;
             }
             string txt = this.Text;
             if (!string.IsNullOrEmpty(txt))
@@ -379,7 +379,7 @@ namespace HMIControl
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if (e.Key == Key.Return && _funcWrites.Count>0 && !string.IsNullOrEmpty(Text))
+            if (e.Key == Key.Return && _funcWrites.Count > 0 && !string.IsNullOrEmpty(Text))
             {
                 foreach (var func in _funcWrites)
                 {

@@ -91,15 +91,15 @@ namespace HMIControl
                 {
                     if (flag)
                     {
-                        drawingContext.DrawLine(pen, new Point(width/2, i * num), new Point(width, i * num));
+                        drawingContext.DrawLine(pen, new Point(width / 2, i * num), new Point(width, i * num));
                     }
                     else
                     {
-                        drawingContext.DrawLine(pen, new Point(i * num, height/2), new Point(i * num, height));
+                        drawingContext.DrawLine(pen, new Point(i * num, height / 2), new Point(i * num, height));
                     }
                 }
             }
-            
+
         }
 
         public SelectiveScrollingOrientation Flipping

@@ -82,7 +82,7 @@ namespace HMIControl
         bool IsPulse { get; set; }
         string TagWriteText { get; set; }
         bool SetTagWriter(IEnumerable<Delegate> tagWriter);
-    }    
+    }
 
     public class TagActions
     {

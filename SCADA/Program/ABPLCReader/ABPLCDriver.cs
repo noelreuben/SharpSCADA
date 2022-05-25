@@ -415,7 +415,7 @@ namespace ABPLCDriver
         {
             get { return 122; }
         }
-  
+
     }
 
     public sealed class ABPLCGroup : PLCGroup

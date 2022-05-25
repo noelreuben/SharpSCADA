@@ -422,7 +422,7 @@ namespace TagConfig
     public class Register
     {
         bool _enable;
-        string _assembly, _className,_classFullName,_description;
+        string _assembly, _className, _classFullName, _description;
 
         public bool Enable
         {

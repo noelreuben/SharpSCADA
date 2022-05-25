@@ -48,7 +48,7 @@ namespace HMIControl.VisualStudio.Design
         {
             InitializeComponent();
             _tag = tag;
-            
+
         }
 
         void dataGridView1_RowValidating(object sender, DataGridViewCellCancelEventArgs e)

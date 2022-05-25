@@ -26,7 +26,7 @@ namespace HMIControl
             drawingContext.PushTransform(new RotateTransform(450 - this.StartAngle, width, height));
             drawingContext.DrawEllipse(brush1, pen, point, width, width);
             drawingContext.DrawEllipse(brush2, null, point, width * 0.9, width * 0.9);
-            drawingContext.DrawEllipse(brush3, null, new Point(width, height*0.5), width * 0.15, width * 0.15);
+            drawingContext.DrawEllipse(brush3, null, new Point(width, height * 0.5), width * 0.15, width * 0.15);
             drawingContext.DrawEllipse(brush, null, new Point(width, height * 0.5), width * 0.125, width * 0.125);
             //base.OnRender(drawingContext);
         }

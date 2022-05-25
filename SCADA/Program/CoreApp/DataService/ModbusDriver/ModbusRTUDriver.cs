@@ -21,7 +21,7 @@ namespace ModbusDriver
             }
         }
 
-        private SerialPortStream _serialPort; 
+        private SerialPortStream _serialPort;
         public int PDU
         {
             get { return 0x100; }
@@ -140,8 +140,8 @@ namespace ModbusDriver
             _name = name;
             _server = server;
             _port = port;
-            _serialPort = new SerialPortStream(port); 
-             _timeOut = timeOut;
+            _serialPort = new SerialPortStream(port);
+            _timeOut = timeOut;
             _serialPort.ReadTimeout = _timeOut;
             _serialPort.WriteTimeout = _timeOut;
             _serialPort.BaudRate = int.Parse(baudRate);

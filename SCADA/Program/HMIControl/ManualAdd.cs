@@ -14,15 +14,15 @@ using System.ComponentModel;
 
 namespace HMIControl
 {
-	/// <summary>
-	/// ManualAdd.xaml 的交互逻辑
-	/// </summary>
-    public  class ManualAdd : HMIControlBase
-	{
+    /// <summary>
+    /// ManualAdd.xaml 的交互逻辑
+    /// </summary>
+    public class ManualAdd : HMIControlBase
+    {
         static ManualAdd()
-		{
+        {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ManualAdd), new FrameworkPropertyMetadata(typeof(ManualAdd)));
-		}
+        }
 
         public static DependencyProperty IsInWorkProperty = DependencyProperty.Register("IsInWork", typeof(bool), typeof(ManualAdd),
            new PropertyMetadata(OnIsInWorkChanged));
@@ -77,14 +77,14 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[1]
-                {  
+                {
                     new  LinkPosition(new Point(0.5,1),ConnectOrientation.Bottom),
                 };
         }
 
         public override string[] GetActions()
         {
-            return new string[] { TagActions.VISIBLE, TagActions.CAPTION, TagActions.DEVICENAME, TagActions.RUN,  TagActions.RAWNAME,TagActions.WARN };
+            return new string[] { TagActions.VISIBLE, TagActions.CAPTION, TagActions.DEVICENAME, TagActions.RUN, TagActions.RAWNAME, TagActions.WARN };
         }
 
         public override Action SetTagReader(string key, Delegate tagChanged)
@@ -104,9 +104,9 @@ namespace HMIControl
                     {
                         return delegate { IsNeedAdd = _funcwarn(); };
                     }
-                    else return null;    
+                    else return null;
             }
             return base.SetTagReader(key, tagChanged);
         }
-	}
+    }
 }

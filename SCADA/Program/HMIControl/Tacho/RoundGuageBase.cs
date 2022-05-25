@@ -18,7 +18,7 @@ namespace HMIControl
 
         protected RoundDial scale;
         protected RoundIndicator indict;
-        
+
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -65,7 +65,7 @@ namespace HMIControl
         {
             if (base.IsMouseCaptured && e.LeftButton == MouseButtonState.Pressed)
             {
-                Point p=Mouse.GetPosition(this);
+                Point p = Mouse.GetPosition(this);
                 double num = scale.AngleFromPoint(p);
                 //this.indict.ValueFromAngle(lastAngle, num);
                 this.Value = scale.ValueFromAngle(num);

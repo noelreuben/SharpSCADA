@@ -51,7 +51,7 @@ namespace HMIControl
             base.OnMouseLeftButtonUp(e);
             if (IsPulse)
             {
-                if (_funcWrites != null) 
+                if (_funcWrites != null)
                     foreach (var _funcWrite in _funcWrites)
                         _funcWrite(false);
             }
@@ -63,7 +63,7 @@ namespace HMIControl
             base.OnClick();
             if (!IsPulse)
             {
-                if (_funcints != null && _funcints.Count>0)
+                if (_funcints != null && _funcints.Count > 0)
                     foreach (var _funcint in _funcints)
                         _funcint();
                 else if (_funcWrites != null)

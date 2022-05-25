@@ -12,7 +12,7 @@ namespace HMIControl
     /// </summary>
     public class CutoffGate : HMIControlBase
     {
-        public static DependencyProperty OpenProperty = 
+        public static DependencyProperty OpenProperty =
             DependencyProperty.Register("Open", typeof(bool), typeof(CutoffGate),
               new PropertyMetadata(new PropertyChangedCallback(OnValueChanged)));
 

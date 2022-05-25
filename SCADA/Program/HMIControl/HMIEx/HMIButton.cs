@@ -221,7 +221,7 @@ namespace HMIControl
             return null;
         }
 
-        List<Func<object, int>> _funcWrites = new List<Func<object,int>>();
+        List<Func<object, int>> _funcWrites = new List<Func<object, int>>();
         List<Func<int>> _funcints = new List<Func<int>>();
         public bool SetTagWriter(IEnumerable<Delegate> tagWriter)
         {

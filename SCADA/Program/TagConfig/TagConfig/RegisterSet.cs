@@ -85,23 +85,23 @@ namespace TagConfig
 
         private void button1_Click(object sender, EventArgs e)
         {
-          var source=  bindingSource1.DataSource as IEnumerable<Register>;
-          if (source != null)
-          {
-              StringBuilder sb = new StringBuilder();
-              foreach (var reg in source)
-              {
-                  if (reg.Enable)
-                  {
-                      sb.Append("DELETE FROM RegisterModule WHERE CLASSFULLNAME='").Append(reg.ClassFullName).Append("';");
-                      sb.Append("INSERT INTO RegisterModule(AssemblyName,ClassName,ClassFullName,Description) VALUES('")
-                          .Append(reg.AssemblyPath).Append("','").Append(reg.ClassName).Append("','").Append(reg.ClassFullName)
-                         .Append("','").Append(reg.Description).Append("');");
-                  }
-              }
-              if (DataHelper.Instance.ExecuteNonQuery(sb.ToString()) >= 0)
-                  MessageBox.Show("注册成功！");
-          }
+            var source = bindingSource1.DataSource as IEnumerable<Register>;
+            if (source != null)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var reg in source)
+                {
+                    if (reg.Enable)
+                    {
+                        sb.Append("DELETE FROM RegisterModule WHERE CLASSFULLNAME='").Append(reg.ClassFullName).Append("';");
+                        sb.Append("INSERT INTO RegisterModule(AssemblyName,ClassName,ClassFullName,Description) VALUES('")
+                            .Append(reg.AssemblyPath).Append("','").Append(reg.ClassName).Append("','").Append(reg.ClassFullName)
+                           .Append("','").Append(reg.Description).Append("');");
+                    }
+                }
+                if (DataHelper.Instance.ExecuteNonQuery(sb.ToString()) >= 0)
+                    MessageBox.Show("注册成功！");
+            }
         }
     }
 }

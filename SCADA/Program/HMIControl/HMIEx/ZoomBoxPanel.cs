@@ -182,10 +182,10 @@ namespace HMIControl
         public void MoveTo(UIElement element)
         {
             Point position = element.TranslatePoint(new Point(0, 0), this);
-            Point centerPoint = new Point(this.ActualWidth / (2*  this.zoomTransform.ScaleX), this.ActualHeight / (2* this.zoomTransform.ScaleY));
+            Point centerPoint = new Point(this.ActualWidth / (2 * this.zoomTransform.ScaleX), this.ActualHeight / (2 * this.zoomTransform.ScaleY));
 
-            double x = centerPoint.X -position.X;
-            double y = centerPoint.Y -position.Y;
+            double x = centerPoint.X - position.X;
+            double y = centerPoint.Y - position.Y;
 
             x *= this.zoomTransform.ScaleX;
             y *= this.zoomTransform.ScaleY;

@@ -22,20 +22,20 @@ namespace HMIControl
             }
         }
 
-        ControlAdorner parent;        
+        ControlAdorner parent;
 
         public Point RelativePosition { get; set; }//PIN在控件上的相对位置
 
         public ConnectOrientation Orientation { get; set; }
-        
+
         public LinkPin() { }
 
         public LinkPin(ConnectOrientation o, Point p)
         {
             this.Cursor = Cursors.Cross;
             this.RelativePosition = p;
-            this.Orientation = o;    
-   
+            this.Orientation = o;
+
         }
 
         protected override void OnRender(DrawingContext drawingContext)
@@ -46,7 +46,7 @@ namespace HMIControl
         }
 
         public ConnectInfo GetInfo()
-        {            
+        {
             parent = Parent as ControlAdorner;
             var element = parent.AdornedElement as HMIControlBase;
             return element.GetInfo1(this.Orientation, this.RelativePosition);

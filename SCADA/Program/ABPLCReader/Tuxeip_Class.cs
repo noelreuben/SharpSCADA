@@ -155,7 +155,7 @@ namespace Tuxeip
         string adress,
         LGX_Data_Type datatype,
         void* data,
-            //int datasize,
+        //int datasize,
         short number);
 
     }

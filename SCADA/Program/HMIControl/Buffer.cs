@@ -21,7 +21,7 @@ namespace HMIControl
                 return (Int16)GetValue(StatusProperty);
             }
         }
-        
+
         static Buffer()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Buffer), new FrameworkPropertyMetadata(typeof(Buffer)));
@@ -30,7 +30,7 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[2]
-                {  
+                {
                     new  LinkPosition(new Point(0.5,0),ConnectOrientation.Top),
                     new  LinkPosition(new Point(0.5,1),ConnectOrientation.Bottom),
                 };
@@ -75,7 +75,7 @@ namespace HMIControl
         {
             base.OnApplyTemplate();
             var time = base.GetTemplateChild("discharge") as HMIText;
-            if(time != null)
+            if (time != null)
                 children = new ITagLink[] { time };
         }
 

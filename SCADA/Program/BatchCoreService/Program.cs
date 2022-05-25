@@ -10,10 +10,10 @@ namespace BatchCoreService
         static void Main()
         {
             ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
-			{ 
-				new BatchCoreService() 
-			};
+            ServicesToRun = new ServiceBase[]
+            {
+                new BatchCoreService()
+            };
             ServiceBase.Run(ServicesToRun);
         }
     }

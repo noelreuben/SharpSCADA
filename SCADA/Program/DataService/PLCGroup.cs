@@ -284,7 +284,7 @@ namespace DataService
                 }
                 else
                 {
-                    var size= _start.DataSize <= bitCount ? 1 : _start.DataSize / bitCount;
+                    var size = _start.DataSize <= bitCount ? 1 : _start.DataSize / bitCount;
                     _rangeList.Add(new PDUArea(_start, size, 0, 1));
                     _cacheReader.Size = size;//改变Cache的Size属性值将创建Cache的内存区域
                 }

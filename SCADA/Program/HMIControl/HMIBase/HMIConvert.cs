@@ -88,7 +88,7 @@ namespace HMIControl
             string ret = string.Empty;
             for (int i = 0; i < list.Length; i++)
             {
-                if (((1<< i) & index) != 0)
+                if (((1 << i) & index) != 0)
                     ret += list[i] + ".";
             }
             return ret.TrimEnd('.');
@@ -109,7 +109,7 @@ namespace HMIControl
             string ret = string.Empty;
             for (int i = 0; i < list.Length; i++)
             {
-                if (((1<< i) & index) != 0)
+                if (((1 << i) & index) != 0)
                     ret += list[i] + ".";
             }
             return ret.TrimEnd('.');
@@ -130,7 +130,7 @@ namespace HMIControl
             string ret = string.Empty;
             for (int i = 0; i < list.Length; i++)
             {
-                if (((1<< i) & index) != 0)
+                if (((1 << i) & index) != 0)
                     ret += list[i] + ".";
             }
             return ret.TrimEnd('.');
@@ -151,7 +151,7 @@ namespace HMIControl
             string ret = string.Empty;
             for (int i = 0; i < list.Length; i++)
             {
-                if (((1<< i) & index) != 0)
+                if (((1 << i) & index) != 0)
                     ret += list[i] + ".";
             }
             return ret.TrimEnd('.');
@@ -172,7 +172,7 @@ namespace HMIControl
             string ret = string.Empty;
             for (int i = 0; i < list.Length; i++)
             {
-                if (((1<< i) & index) != 0)
+                if (((1 << i) & index) != 0)
                     ret += list[i] + ".";
             }
             return ret.TrimEnd('.');
@@ -193,7 +193,7 @@ namespace HMIControl
             string ret = string.Empty;
             for (int i = 0; i < list.Length; i++)
             {
-                if (((1<< i) & index) != 0)
+                if (((1 << i) & index) != 0)
                     ret += list[i] + ".";
             }
             return ret.TrimEnd('.');
@@ -214,7 +214,7 @@ namespace HMIControl
             string ret = string.Empty;
             for (int i = 0; i < list.Length; i++)
             {
-                if (((1<< i) & index) != 0)
+                if (((1 << i) & index) != 0)
                     ret += list[i] + ".";
             }
             return ret.TrimEnd('.');
@@ -235,7 +235,7 @@ namespace HMIControl
             string ret = string.Empty;
             for (int i = 0; i < list.Length; i++)
             {
-                if (((1<< i) & index) != 0)
+                if (((1 << i) & index) != 0)
                     ret += list[i] + ".";
             }
             return ret.TrimEnd('.');

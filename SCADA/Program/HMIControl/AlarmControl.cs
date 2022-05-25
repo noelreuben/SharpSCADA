@@ -73,7 +73,7 @@ namespace HMIControl
                         };
                     }
                     else return null;
-                
+
             }
             return base.SetTagReader(key, tagChanged);
         }
@@ -83,7 +83,7 @@ namespace HMIControl
         {
             base.OnApplyTemplate();
             UpdataState(false);
-            
+
         }
 
         private void UpdataState(bool myState)

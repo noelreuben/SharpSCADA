@@ -57,7 +57,7 @@ namespace HMIControl
                 StartPoint = new Point(0.0, 0.5),
                 EndPoint = new Point(1.0, 0.5),
                 GradientStops = new GradientStopCollection{
-                new GradientStop(AddColorDelta(color, deltaA), 0.0), 
+                new GradientStop(AddColorDelta(color, deltaA), 0.0),
                 new GradientStop(AddColorDelta(color, deltaB), 1.0) }
             };
             if (rotateAngle != 0.0)
@@ -84,8 +84,8 @@ namespace HMIControl
                 StartPoint = new Point(0.0, 0.5),
                 EndPoint = new Point(1.0, 0.5),
                 GradientStops = new GradientStopCollection{
-                new GradientStop(color2, 0.0), 
-                new GradientStop(color2, offset), 
+                new GradientStop(color2, 0.0),
+                new GradientStop(color2, offset),
                 new GradientStop(color, 1.0) }
             };
             if (rotateAngle != 0.0)

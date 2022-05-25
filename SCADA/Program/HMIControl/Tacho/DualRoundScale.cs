@@ -19,7 +19,7 @@ namespace HMIControl
             double ringThickness = base.RingThickness;
             double scale = (endAngle - startAngle) / (maximum - minimum);
             var stops = this.RangeColors;
-            Point point = new Point(base.ActualWidth / 2.0, base.ActualHeight );
+            Point point = new Point(base.ActualWidth / 2.0, base.ActualHeight);
             RotateTransform transform = new RotateTransform(0.0, point.X, point.Y);
             Point point2 = new Point(point.X, 0.0);
             Point point3 = new Point(point.X, ringThickness);
@@ -27,7 +27,7 @@ namespace HMIControl
             if (stops.Count != 0)
             {
                 double x = 0.0;
-                double angle =90- endAngle;
+                double angle = 90 - endAngle;
                 Color startColor = stops[0].Color;
                 Color color = stops[0].Color;
                 Size size = new Size(point.X, point.Y);
@@ -78,7 +78,7 @@ namespace HMIControl
             if (tickFrequency > 0.0)
             {
                 double num1 = tickFrequency - (Math.Truncate((tickFrequency - minimum) / tickFrequency) * tickFrequency);
-                transform.Angle =  90- endAngle - ((num1 - minimum) * scale);
+                transform.Angle = 90 - endAngle - ((num1 - minimum) * scale);
                 Pen pen = new Pen(base.Foreground, base.StrokeThickness);
                 while (num1 <= maximum)
                 {
@@ -123,6 +123,6 @@ namespace HMIControl
                 }
             }
 
-        } 
+        }
     }
 }

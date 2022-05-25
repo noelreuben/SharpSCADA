@@ -50,9 +50,9 @@ namespace OPC.Data.Class
         public const int OPC_WRITEABLE = 2;
     }
 
- 
 
- 
+
+
 
     public abstract class Qualities
     {
