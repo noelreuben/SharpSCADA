@@ -631,7 +631,7 @@ namespace DataService
 
         private bool IsConstant(string str, out object value)
         {
-            if (str.Length > 1 & str[0] == '\'' && str[^1]== '\'')
+            if (str.Length > 1 & str[0] == '\'' && str[^1] == '\'')
             {
                 value = str.Trim('\'');
                 return true;

@@ -20,7 +20,7 @@ using System.Xml;
 namespace BatchCoreService
 {
 
-    public class DAService :  IDataServer, IAlarmServer
+    public class DAService : IDataServer, IAlarmServer
     {
         const int PORT = 6543;
 
@@ -180,10 +180,10 @@ namespace BatchCoreService
         {
             var loggerFactory = new LoggerFactory();
             Func<string, LogLevel, bool> filter = (category, level) => true;
-            loggerFactory.AddProvider( new ConsoleLoggerProvider(filter, false));
+            loggerFactory.AddProvider(new ConsoleLoggerProvider(filter, false));
             loggerFactory.AddProvider(new DebugLoggerProvider(filter));
             Log = loggerFactory.CreateLogger(SERVICELOGSOURCE);
-            InitServerByXml(); 
+            InitServerByXml();
             _scales = new List<Scaling>();
             _drivers = new SortedList<short, IDriver>();
             _alarmList = new List<AlarmItem>(ALARMLIMIT + 10);
