@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace HMIControl.VisualStudio.Design
@@ -99,7 +99,7 @@ namespace HMIControl.VisualStudio.Design
                     break;
                 case "+''":
                     string txt = coolTextBox1.Text;
-                    if (!string.IsNullOrEmpty(txt) && txt[0] != '\'' && txt[txt.Length - 1] != '\'')
+                    if (!string.IsNullOrEmpty(txt) && txt[0] != '\'' && txt[^1]!= '\'')
                         coolTextBox1.Text = "'" + txt + "'";
                     else
                         coolTextBox1.Text = txt.Trim('\'');
@@ -311,7 +311,7 @@ namespace HMIControl.VisualStudio.Design
                 case "''":
                     {
                         string txt = coolTextBox1.SelectedText;
-                        if (!string.IsNullOrEmpty(txt) && txt[0] != '\'' && txt[txt.Length - 1] != '\'')
+                        if (!string.IsNullOrEmpty(txt) && txt[0] != '\'' && txt[^1]!= '\'')
                             coolTextBox1.SelectedText = "'" + txt + "'";
                         else
                             coolTextBox1.SelectedText = txt.Trim('\'');
@@ -320,7 +320,7 @@ namespace HMIControl.VisualStudio.Design
                 case "( )":
                     {
                         string txt = coolTextBox1.SelectedText;
-                        if (!string.IsNullOrEmpty(txt) && txt[0] != '(' && txt[txt.Length - 1] != ')')
+                        if (!string.IsNullOrEmpty(txt) && txt[0] != '(' && txt[^1]!= ')')
                             coolTextBox1.SelectedText = "(" + txt + ")";
                     }
                     break;

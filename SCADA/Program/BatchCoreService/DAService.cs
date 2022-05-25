@@ -1,4 +1,4 @@
-﻿using ClientDriver;
+using ClientDriver;
 using DatabaseLib;
 using DataService;
 using System;
@@ -1205,7 +1205,7 @@ namespace BatchCoreService
             var tempData = (HistoryData[])stateInfo;
             if (tempData.Length == 0) return;
             DateTime startTime = tempData[0].TimeStamp;
-            DateTime endTime = tempData[tempData.Length - 1].TimeStamp;
+            DateTime endTime = tempData[^1].TimeStamp;
             //Thread.Sleep(TimeSpan.FromMinutes(10));
             int count = 0;
             while (true)
