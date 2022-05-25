@@ -16,8 +16,8 @@ namespace HMIControl
             DependencyProperty.Register("ShowCaption", typeof(bool), typeof(HMIControlBase), new FrameworkPropertyMetadata(true));
 
         public static readonly DependencyProperty AlarmProperty =
-            DependencyProperty.Register("Alarm", typeof(bool), typeof(HMIControlBase), 
-            new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender, 
+            DependencyProperty.Register("Alarm", typeof(bool), typeof(HMIControlBase),
+            new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender,
             new PropertyChangedCallback(OnValueChanged)));
 
         protected static void OnValueChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
@@ -28,7 +28,7 @@ namespace HMIControl
         }
 
         protected virtual void UpdateState() { }
-        
+
 
         [Category("HMI")]
         public string Caption

@@ -14,7 +14,7 @@ namespace HMIControl
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(TubeT), new FrameworkPropertyMetadata(typeof(TubeT)));
         }
-       
+
 
         #region HMI属性
         [Category("HMI")]
@@ -30,7 +30,7 @@ namespace HMIControl
             }
         }
 
-        
+
         #endregion
 
         private static void ValueChangedCallback(DependencyObject obj, DependencyPropertyChangedEventArgs args)
@@ -41,7 +41,7 @@ namespace HMIControl
                 case ConnectOrientation.Top:
                     VisualStateManager.GoToState(tube, "ToTop", true);
                     return;
-                case  ConnectOrientation.Bottom:
+                case ConnectOrientation.Bottom:
                     VisualStateManager.GoToState(tube, "ToBottom", true);
                     return;
                 case ConnectOrientation.Left:

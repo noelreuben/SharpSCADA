@@ -99,7 +99,7 @@ namespace TagConfig
 
 
     //TypeID,SourceID,AlarmType,EventType,ConditionType,Para,IsEnabled,Deadband,Delay,Comment
-    public class Condition 
+    public class Condition
     {
         bool _enable;
         byte _eventType, _condType;

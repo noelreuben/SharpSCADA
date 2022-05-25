@@ -12,7 +12,7 @@ namespace HMIControl
 
         public ControlAdorner(LinkableControl AdorneredItem)
             : base(AdorneredItem)
-        {   
+        {
             _children = new List<LinkPin>(4);
             foreach (var pos in AdorneredItem.GetLinkPositions())
             {
@@ -21,8 +21,8 @@ namespace HMIControl
                 this.AddLogicalChild(pin);
                 this.AddVisualChild(pin);
             }
-        }        
-        
+        }
+
         protected override int VisualChildrenCount
         {
             get
@@ -42,7 +42,7 @@ namespace HMIControl
             {
                 return _children.GetEnumerator();
             }
-        }         
+        }
 
         protected override Size ArrangeOverride(Size finalSize)
         {

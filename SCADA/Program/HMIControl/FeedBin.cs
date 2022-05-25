@@ -26,15 +26,15 @@ namespace HMIControl
         //    DependencyProperty.Register("IsFeeding", typeof(bool), typeof(FeedBin),
         //    new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender, new PropertyChangedCallback(OnValueChanged)));
 
-        public static readonly DependencyProperty BelowSQLProperty = 
+        public static readonly DependencyProperty BelowSQLProperty =
             DependencyProperty.Register("BelowSQL", typeof(bool), typeof(FeedBin),
             new PropertyMetadata(false));
 
-        public static readonly DependencyProperty AboveSQHProperty = 
+        public static readonly DependencyProperty AboveSQHProperty =
             DependencyProperty.Register("AboveSQH", typeof(bool), typeof(FeedBin),
             new PropertyMetadata(false));
 
-        public static readonly DependencyProperty RawNameProperty = 
+        public static readonly DependencyProperty RawNameProperty =
             DependencyProperty.Register("RawName", typeof(string), typeof(FeedBin));
 
         public static readonly DependencyProperty BinNameProperty =
@@ -146,12 +146,12 @@ namespace HMIControl
                 double ratio = fs.CV / fs.PV;
                 fs.Volumn = Math.Min(Math.Max(ratio, 0.0), 1.0) * fs.Height;
             }
-        }        
+        }
 
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[2]
-                {  
+                {
                     new  LinkPosition(new Point(0.5,0),ConnectOrientation.Top),
                     new  LinkPosition(new Point(0.5,1),ConnectOrientation.Bottom),
                 };
@@ -159,7 +159,7 @@ namespace HMIControl
 
         public override string[] GetActions()
         {
-            return new string[] { TagActions.VISIBLE, TagActions.CAPTION, TagActions.DEVICENAME, TagActions.ALARM, TagActions.LOWLEVEL, TagActions.HIGHLEVEL, TagActions.RAWNAME, TagActions.SP, TagActions.PV }; 
+            return new string[] { TagActions.VISIBLE, TagActions.CAPTION, TagActions.DEVICENAME, TagActions.ALARM, TagActions.LOWLEVEL, TagActions.HIGHLEVEL, TagActions.RAWNAME, TagActions.SP, TagActions.PV };
         }
 
         public override Action SetTagReader(string key, Delegate tagChanged)

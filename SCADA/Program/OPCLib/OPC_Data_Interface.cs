@@ -54,22 +54,22 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int SetLocaleID(
-            [In]								int dwLcid);
+            [In] int dwLcid);
 
         void GetLocaleID(
-            [Out]							out int pdwLcid);
+            [Out] out int pdwLcid);
 
         [PreserveSig]
         int QueryAvailableLocaleIDs(
-            [Out]							out int pdwCount,
-            [Out]							out	IntPtr pdwLcid);
+            [Out] out int pdwCount,
+            [Out] out IntPtr pdwLcid);
 
         void GetErrorString(
-            [In]											   int dwError,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string ppString);
+            [In] int dwError,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppString);
 
         void SetClientName(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szName);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName);
     }
 
     //[Guid("B196B284-BAB4-101A-B69C-00AA00341D07")]
@@ -131,7 +131,7 @@ namespace OPC.Data.Interface
     public interface IOPCShutdown
     {
         void ShutdownRequest(
-            [In, MarshalAs(UnmanagedType.LPWStr)]		string szReason);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szReason);
     }
 
 
@@ -143,20 +143,20 @@ namespace OPC.Data.Interface
     public interface IOPCServerList
     {
         void EnumClassesOfCategories(
-            [In]											 int cImplemented,	// WARNING ONLY 1!!
-            [In]										ref Guid catidImpl,		// WARNING ONLY 1!!
-            [In]											 int cRequired,		// WARNING ONLY 1!!
-            [In]										ref Guid catidReq,		// WARNING ONLY 1!!
-            [Out, MarshalAs(UnmanagedType.IUnknown)]	out	object ppUnk);
+            [In] int cImplemented,	// WARNING ONLY 1!!
+            [In] ref Guid catidImpl,		// WARNING ONLY 1!!
+            [In] int cRequired,		// WARNING ONLY 1!!
+            [In] ref Guid catidReq,		// WARNING ONLY 1!!
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
         void GetClassDetails(
-            [In]										  ref Guid clsid,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string ppszProgID,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string ppszUserType);
+            [In] ref Guid clsid,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppszProgID,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppszUserType);
 
         void CLSIDFromProgID(
-            [In, MarshalAs(UnmanagedType.LPWStr)]		  string szProgId,
-            [Out]										out Guid clsid);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szProgId,
+            [Out] out Guid clsid);
     }	// interface IOPCServerList
 
 
@@ -166,21 +166,21 @@ namespace OPC.Data.Interface
     public interface IOPCServerList2
     {
         void EnumClassesOfCategories(
-            [In]											int cImplemented,	// WARNING ONLY 1!!
+            [In] int cImplemented,	// WARNING ONLY 1!!
             [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 0)] Guid[] catidImpl,		// WARNING ONLY 1!!
-            [In]											int cRequired,		// WARNING ONLY 1!!
+            [In] int cRequired,		// WARNING ONLY 1!!
             [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 2)] Guid[] catidReq,		// WARNING ONLY 1!!
             [Out, MarshalAs(UnmanagedType.Interface)] out IOPCEnumGUID ppUnk);
 
         void GetClassDetails(
-            [In]										  ref Guid clsid,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string ppszProgID,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string ppszUserType,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]      out string ppszVerIndProgID);
+            [In] ref Guid clsid,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppszProgID,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppszUserType,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppszVerIndProgID);
 
         void CLSIDFromProgID(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szProgId,
-            [Out]										  out Guid clsid);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szProgId,
+            [Out] out Guid clsid);
     }	// interface IOPCServerList
 
 
@@ -191,17 +191,17 @@ namespace OPC.Data.Interface
     public interface IEnumGUID
     {
         void Next(
-            [In]											int celt,
-            [In]										 IntPtr rgelt,				// ptr to Out-Values!!
-            [Out]										out int pceltFetched);
+            [In] int celt,
+            [In] IntPtr rgelt,				// ptr to Out-Values!!
+            [Out] out int pceltFetched);
 
         void Skip(
-            [In]											int celt);
+            [In] int celt);
 
         void Reset();
 
         void Clone(
-            [Out, MarshalAs(UnmanagedType.IUnknown)]	out	object ppUnk);
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
     }
     [ComVisible(true), ComImport,
@@ -227,12 +227,12 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int RemoteNext(
-            [In]											int celt,
+            [In] int celt,
             [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPWStr)] string[] rgelt,				// ptr to Out-Values!!
-            [Out]										out int pceltFetched);
+            [Out] out int pceltFetched);
 
         int Skip(
-            [In]											int celt);
+            [In] int celt);
 
         void Reset();
 
@@ -247,17 +247,17 @@ namespace OPC.Data.Interface
     public interface IOPCEnumGUID
     {
         void Next(
-            [In]											int celt,
+            [In] int celt,
             [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct)] Guid[] rgelt,				// ptr to Out-Values!!
-            [Out]										out int pceltFetched);
+            [Out] out int pceltFetched);
 
         void Skip(
-            [In]											int celt);
+            [In] int celt);
 
         void Reset();
 
         void Clone(
-            [Out, MarshalAs(UnmanagedType.Interface)]	out	IOPCEnumGUID ppUnk);
+            [Out, MarshalAs(UnmanagedType.Interface)] out IOPCEnumGUID ppUnk);
 
     }
 
@@ -270,43 +270,43 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int AddGroup(
-            [In, MarshalAs(UnmanagedType.LPWStr)]				 string szName,
-            [In, MarshalAs(UnmanagedType.Bool)]					   bool bActive,
-            [In]													int dwRequestedUpdateRate,
-            [In]													int hClientGroup,
-            [In]		                                         IntPtr pTimeBias,
-            [In]		                                         IntPtr pPercentDeadband,
-            [In]													int dwLCID,
-            [Out]													out	int phServerGroup,
-            [Out]													out	int pRevisedUpdateRate,
-            [In]													ref Guid riid,
-            [Out, MarshalAs(UnmanagedType.IUnknown)]				out	object ppUnk);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName,
+            [In, MarshalAs(UnmanagedType.Bool)] bool bActive,
+            [In] int dwRequestedUpdateRate,
+            [In] int hClientGroup,
+            [In] IntPtr pTimeBias,
+            [In] IntPtr pPercentDeadband,
+            [In] int dwLCID,
+            [Out] out int phServerGroup,
+            [Out] out int pRevisedUpdateRate,
+            [In] ref Guid riid,
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
         void GetErrorString(
-            [In]											int dwError,
-            [In]											int dwLocale,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string ppString);
+            [In] int dwError,
+            [In] int dwLocale,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppString);
 
         [PreserveSig]
         int GetGroupByName(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szName,
-            [In]										ref Guid riid,
-            [Out, MarshalAs(UnmanagedType.IUnknown)]	out	object ppUnk);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName,
+            [In] ref Guid riid,
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
         [PreserveSig]
         int GetStatus(
-            [Out, MarshalAs(UnmanagedType.LPStruct)]	out	OPCSERVERSTATUS ppServerStatus);
+            [Out, MarshalAs(UnmanagedType.LPStruct)] out OPCSERVERSTATUS ppServerStatus);
 
         [PreserveSig]
         int RemoveGroup(
-            [In]											int hServerGroup,
-            [In, MarshalAs(UnmanagedType.Bool)]			bool bForce);
+            [In] int hServerGroup,
+            [In, MarshalAs(UnmanagedType.Bool)] bool bForce);
 
         [PreserveSig]
         int CreateGroupEnumerator(										// may return S_FALSE
-            [In]											int dwScope,
-            [In]										ref Guid riid,
-            [Out, MarshalAs(UnmanagedType.IUnknown)]	out	object ppUnk);
+            [In] int dwScope,
+            [In] ref Guid riid,
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
     }	// interface IOPCServer
 
@@ -320,13 +320,13 @@ namespace OPC.Data.Interface
     public interface IOPCServerPublicGroups
     {
         void GetPublicGroupByName(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szName,
-            [In]										ref Guid riid,
-            [Out, MarshalAs(UnmanagedType.IUnknown)]	out	object ppUnk);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName,
+            [In] ref Guid riid,
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
         void RemovePublicGroup(
-            [In]											int hServerGroup,
-            [In, MarshalAs(UnmanagedType.Bool)]			bool bForce);
+            [In] int hServerGroup,
+            [In, MarshalAs(UnmanagedType.Bool)] bool bForce);
 
     }
 
@@ -338,30 +338,30 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int QueryOrganization(
-            [Out, MarshalAs(UnmanagedType.U4)]			out	OPCNAMESPACETYPE pNameSpaceType);
+            [Out, MarshalAs(UnmanagedType.U4)] out OPCNAMESPACETYPE pNameSpaceType);
 
         [PreserveSig]
         int ChangeBrowsePosition(
-            [In, MarshalAs(UnmanagedType.U4)]				OPCBROWSEDIRECTION dwBrowseDirection,
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szName);
+            [In, MarshalAs(UnmanagedType.U4)] OPCBROWSEDIRECTION dwBrowseDirection,
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName);
 
         [PreserveSig]
         int BrowseOPCItemIDs(
-            [In, MarshalAs(UnmanagedType.U4)]				OPCBROWSETYPE dwBrowseFilterType,
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szFilterCriteria,
-            [In, MarshalAs(UnmanagedType.U2)]				short vtDataTypeFilter,
-            [In, MarshalAs(UnmanagedType.U4)]				OPCACCESSRIGHTS dwAccessRightsFilter,
-            [Out, MarshalAs(UnmanagedType.Interface)]       out IEnumString ppUnk);
+            [In, MarshalAs(UnmanagedType.U4)] OPCBROWSETYPE dwBrowseFilterType,
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szFilterCriteria,
+            [In, MarshalAs(UnmanagedType.U2)] short vtDataTypeFilter,
+            [In, MarshalAs(UnmanagedType.U4)] OPCACCESSRIGHTS dwAccessRightsFilter,
+            [Out, MarshalAs(UnmanagedType.Interface)] out IEnumString ppUnk);
 
         [PreserveSig]
         int GetItemID(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szItemDataID,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string szItemID);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szItemDataID,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string szItemID);
 
         [PreserveSig]
         int BrowseAccessPaths(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szItemID,
-            [Out, MarshalAs(UnmanagedType.Interface)]	out	IEnumString ppUnk);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szItemID,
+            [Out, MarshalAs(UnmanagedType.Interface)] out IEnumString ppUnk);
     }
 
 
@@ -373,27 +373,27 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int QueryAvailableProperties(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szItemID,
-            [Out]										out int dwCount,
-            [Out]										out IntPtr ppPropertyIDs,
-            [Out]										out IntPtr ppDescriptions,
-            [Out]										out	IntPtr ppvtDataTypes);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szItemID,
+            [Out] out int dwCount,
+            [Out] out IntPtr ppPropertyIDs,
+            [Out] out IntPtr ppDescriptions,
+            [Out] out IntPtr ppvtDataTypes);
 
         [PreserveSig]
         int GetItemProperties(
-            [In, MarshalAs(UnmanagedType.LPWStr)]						string szItemID,
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]	int[] pdwPropertyIDs,
-            [Out]													out IntPtr ppvData,
-            [Out]													out	IntPtr ppErrors);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szItemID,
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] int[] pdwPropertyIDs,
+            [Out] out IntPtr ppvData,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int LookupItemIDs(
-            [In, MarshalAs(UnmanagedType.LPWStr)]						string szItemID,
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]	int[] pdwPropertyIDs,
-            [Out]													out IntPtr ppszNewItemIDs,
-            [Out]													out	IntPtr ppErrors);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szItemID,
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] int[] pdwPropertyIDs,
+            [Out] out IntPtr ppszNewItemIDs,
+            [Out] out IntPtr ppErrors);
     }
 
 
@@ -405,31 +405,31 @@ namespace OPC.Data.Interface
     public interface IOPCGroupStateMgt
     {
         void GetState(
-            [Out]										out	int pUpdateRate,
-            [Out, MarshalAs(UnmanagedType.Bool)]		out	bool pActive,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string ppName,
-            [Out]										out	int pTimeBias,
-            [Out]										out	float pPercentDeadband,
-            [Out]										out	int pLCID,
-            [Out]										out	int phClientGroup,
-            [Out]										out	int phServerGroup);
-         [PreserveSig]
+            [Out] out int pUpdateRate,
+            [Out, MarshalAs(UnmanagedType.Bool)] out bool pActive,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppName,
+            [Out] out int pTimeBias,
+            [Out] out float pPercentDeadband,
+            [Out] out int pLCID,
+            [Out] out int phClientGroup,
+            [Out] out int phServerGroup);
+        [PreserveSig]
         int SetState(
-            [In]										IntPtr pRequestedUpdateRate,
-            [Out]									out	int pRevisedUpdateRate,
-            [In]	                                    IntPtr pActive,
-            [In]										IntPtr pTimeBias,
-            [In]		                                IntPtr pPercentDeadband,
-            [In]		                                IntPtr pLCID,
-            [In]		                                IntPtr phClientGroup);
+           [In] IntPtr pRequestedUpdateRate,
+           [Out] out int pRevisedUpdateRate,
+           [In] IntPtr pActive,
+           [In] IntPtr pTimeBias,
+           [In] IntPtr pPercentDeadband,
+           [In] IntPtr pLCID,
+           [In] IntPtr phClientGroup);
 
         void SetName(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szName);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName);
 
         void CloneGroup(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szName,
-            [In]										ref Guid riid,
-            [Out, MarshalAs(UnmanagedType.IUnknown)]	out	object ppUnk);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName,
+            [In] ref Guid riid,
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
     }	// interface IOPCGroupStateMgt
 
@@ -440,39 +440,39 @@ namespace OPC.Data.Interface
     public interface IOPCGroupStateMgt2
     {
         void GetState(
-            [Out]										out	int pUpdateRate,
-            [Out, MarshalAs(UnmanagedType.Bool)]		out	bool pActive,
-            [Out, MarshalAs(UnmanagedType.LPWStr)]		out	string ppName,
-            [Out]										out	int pTimeBias,
-            [Out]										out	float pPercentDeadband,
-            [Out]										out	int pLCID,
-            [Out]										out	int phClientGroup,
-            [Out]										out	int phServerGroup);
+            [Out] out int pUpdateRate,
+            [Out, MarshalAs(UnmanagedType.Bool)] out bool pActive,
+            [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppName,
+            [Out] out int pTimeBias,
+            [Out] out float pPercentDeadband,
+            [Out] out int pLCID,
+            [Out] out int phClientGroup,
+            [Out] out int phServerGroup);
 
         [PreserveSig]
         int SetState(
-            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)]											int[] pRequestedUpdateRate,
-            [Out]																					out	int pRevisedUpdateRate,
-            [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Bool, SizeConst = 1)]		bool[] pActive,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)]											int[] pTimeBias,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)]		float[] pPercentDeadband,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)]		int[] pLCID,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)]		int[] phClientGroup);
+            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)] int[] pRequestedUpdateRate,
+            [Out] out int pRevisedUpdateRate,
+            [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Bool, SizeConst = 1)] bool[] pActive,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)] int[] pTimeBias,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)] float[] pPercentDeadband,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)] int[] pLCID,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeConst = 1)] int[] phClientGroup);
 
         void SetName(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szName);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName);
 
         void CloneGroup(
-            [In, MarshalAs(UnmanagedType.LPWStr)]			string szName,
-            [In]										ref Guid riid,
-            [Out, MarshalAs(UnmanagedType.IUnknown)]	out	object ppUnk);
+            [In, MarshalAs(UnmanagedType.LPWStr)] string szName,
+            [In] ref Guid riid,
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
         void SetKeepAlive(
-            [In]                                        int dwKeepAliveTime,
-            [Out]                                   out int pdwRevisedKeepAliveTime);
+            [In] int dwKeepAliveTime,
+            [Out] out int pdwRevisedKeepAliveTime);
 
         void GetKeepAlive(
-            [Out]                                   out int pdwKeepAliveTime);
+            [Out] out int pdwKeepAliveTime);
 
 
     }	// interface IOPCGroupStateMgt2
@@ -485,7 +485,7 @@ namespace OPC.Data.Interface
     public interface IOPCPublicGroupStateMgt
     {
         void GetState(
-            [Out, MarshalAs(UnmanagedType.Bool)]		out	bool pPublic);
+            [Out, MarshalAs(UnmanagedType.Bool)] out bool pPublic);
 
         void MoveToPublic();
     }
@@ -499,50 +499,50 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int AddItems(
-            [In]											int dwCount,
+            [In] int dwCount,
             [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 0)] OPCITEMDEF[] pItemArray,
-            [Out]										out IntPtr ppAddResults,
-            [Out]										out	IntPtr ppErrors);
+            [Out] out IntPtr ppAddResults,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int ValidateItems(
-            [In]											int dwCount,
+            [In] int dwCount,
             [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 0)] OPCITEMDEF[] pItemArray,
-            [In, MarshalAs(UnmanagedType.Bool)]			bool bBlobUpdate,
-            [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 0)]out	OPCITEMRESULT[] ppValidationResults,
-            [Out]                                       out IntPtr ppErrors);
+            [In, MarshalAs(UnmanagedType.Bool)] bool bBlobUpdate,
+            [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 0)] out OPCITEMRESULT[] ppValidationResults,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int RemoveItems(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int SetActiveState(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In, MarshalAs(UnmanagedType.Bool)]						bool bActive,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In, MarshalAs(UnmanagedType.Bool)] bool bActive,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int SetClientHandles(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phClient,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phClient,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int SetDatatypes(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	short[] pRequestedDatatypes,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] short[] pRequestedDatatypes,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int CreateEnumerator(
-            [In]										ref Guid riid,
-            [Out, MarshalAs(UnmanagedType.IUnknown)]	out	object ppUnk);
+            [In] ref Guid riid,
+            [Out, MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
 
     }	// interface IOPCItemMgt
 
@@ -556,18 +556,18 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int Read(
-            [In, MarshalAs(UnmanagedType.U4)]							OPCDATASOURCE dwSource,
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]	int[] phServer,
-            [Out]													out IntPtr ppItemValues,
-            [Out]													out	IntPtr ppErrors);
+            [In, MarshalAs(UnmanagedType.U4)] OPCDATASOURCE dwSource,
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] int[] phServer,
+            [Out] out IntPtr ppItemValues,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int Write(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	object[] pItemValues,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pItemValues,
+            [Out] out IntPtr ppErrors);
 
     }	// interface IOPCSyncIO
 
@@ -578,35 +578,35 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int Read(
-            [In, MarshalAs(UnmanagedType.U4)]							OPCDATASOURCE dwSource,
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]	int[] phServer,
-            [Out]													out IntPtr ppItemValues,
-            [Out]													out	IntPtr ppErrors);
+            [In, MarshalAs(UnmanagedType.U4)] OPCDATASOURCE dwSource,
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] int[] phServer,
+            [Out] out IntPtr ppItemValues,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int Write(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	object[] pItemValues,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pItemValues,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int ReadMaxAge(
             [In] int dwCount,
             [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
             [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] pdwMaxAge,
-            [Out]                                               out IntPtr ppvValues,
-            [Out]                                               out IntPtr ppwQualities,
-            [Out]                                               out IntPtr ppftTimeStamps,
-            [Out]                                               out IntPtr ppErrors);
+            [Out] out IntPtr ppvValues,
+            [Out] out IntPtr ppwQualities,
+            [Out] out IntPtr ppftTimeStamps,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int WriteVQT(
-           [In]                                                       int dwCount,
+           [In] int dwCount,
            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
            [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 0)] OPCITEMVQT[] pItemVQT,
-           [Out]                                               out IntPtr ppErrors);
+           [Out] out IntPtr ppErrors);
 
 
     }	// interface IOPCSyncIO 2
@@ -619,34 +619,34 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int Read(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In]														int dwTransactionID,
-            [Out]													out int pdwCancelID,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In] int dwTransactionID,
+            [Out] out int pdwCancelID,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int Write(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	object[] pItemValues,
-            [In]														int dwTransactionID,
-            [Out]													out int pdwCancelID,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pItemValues,
+            [In] int dwTransactionID,
+            [Out] out int pdwCancelID,
+            [Out] out IntPtr ppErrors);
 
         void Refresh2(
-            [In, MarshalAs(UnmanagedType.U4)]				OPCDATASOURCE dwSource,
-            [In]											int dwTransactionID,
-            [Out]										out int pdwCancelID);
+            [In, MarshalAs(UnmanagedType.U4)] OPCDATASOURCE dwSource,
+            [In] int dwTransactionID,
+            [Out] out int pdwCancelID);
 
         void Cancel2(
-            [In]											int dwCancelID);
+            [In] int dwCancelID);
 
         void SetEnable(
-            [In, MarshalAs(UnmanagedType.Bool)]			bool bEnable);
+            [In, MarshalAs(UnmanagedType.Bool)] bool bEnable);
 
         void GetEnable(
-            [Out, MarshalAs(UnmanagedType.Bool)]		out	bool pbEnable);
+            [Out, MarshalAs(UnmanagedType.Bool)] out bool pbEnable);
 
     }	// interface IOPCAsyncIO2
 
@@ -658,55 +658,55 @@ namespace OPC.Data.Interface
     {
         [PreserveSig]
         int Read(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In]														int dwTransactionID,
-            [Out]													out int pdwCancelID,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In] int dwTransactionID,
+            [Out] out int pdwCancelID,
+            [Out] out IntPtr ppErrors);
 
         [PreserveSig]
         int Write(
-            [In]														int dwCount,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	int[] phServer,
-            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)]	object[] pItemValues,
-            [In]														int dwTransactionID,
-            [Out]													out int pdwCancelID,
-            [Out]													out	IntPtr ppErrors);
+            [In] int dwCount,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pItemValues,
+            [In] int dwTransactionID,
+            [Out] out int pdwCancelID,
+            [Out] out IntPtr ppErrors);
 
         void Refresh2(
-            [In, MarshalAs(UnmanagedType.U4)]				OPCDATASOURCE dwSource,
-            [In]											int dwTransactionID,
-            [Out]										out int pdwCancelID);
+            [In, MarshalAs(UnmanagedType.U4)] OPCDATASOURCE dwSource,
+            [In] int dwTransactionID,
+            [Out] out int pdwCancelID);
 
         void Cancel2(
-            [In]											int dwCancelID);
+            [In] int dwCancelID);
 
         void SetEnable(
-            [In, MarshalAs(UnmanagedType.Bool)]			bool bEnable);
+            [In, MarshalAs(UnmanagedType.Bool)] bool bEnable);
 
         void GetEnable(
-            [Out, MarshalAs(UnmanagedType.Bool)]		out	bool pbEnable);
+            [Out, MarshalAs(UnmanagedType.Bool)] out bool pbEnable);
 
         void ReadMaxAge(
             [In] int dwCount,
             [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
             [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] pdwMaxAge,
             [In] int dwTransactionID,
-            [Out]out int pdwCancelID,
-            [Out]out IntPtr ppErrors);
+            [Out] out int pdwCancelID,
+            [Out] out IntPtr ppErrors);
 
         void WriteVQT(
             [In] int dwCount,
             [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phServer,
             [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Struct, SizeParamIndex = 0)] OPCITEMVQT[] pItemVQT,
-            [In]                                                         int dwTransactionID,
-            [Out]                                                    out int pdwCancelID,
-            [Out]                                                 out IntPtr ppErrors);
+            [In] int dwTransactionID,
+            [Out] out int pdwCancelID,
+            [Out] out IntPtr ppErrors);
 
         void RefreshMaxAge(
-            [In]                                                        int dwMaxAge,
-            [In]                                                        int dwTransactionID,
-            [Out]                                                   out int pdwCancelID);
+            [In] int dwMaxAge,
+            [In] int dwTransactionID,
+            [Out] out int pdwCancelID);
 
 
 
@@ -720,40 +720,40 @@ namespace OPC.Data.Interface
     public interface IOPCDataCallback
     {
         void OnDataChange(
-            [In]											int dwTransid,
-            [In]											int hGroup,
-            [In]											int hrMasterquality,
-            [In]											int hrMastererror,
-            [In]											int dwCount,
-            [In]											IntPtr phClientItems,
-            [In]											IntPtr pvValues,
-            [In]											IntPtr pwQualities,
-            [In]											IntPtr pftTimeStamps,
-            [In]											IntPtr ppErrors);
+            [In] int dwTransid,
+            [In] int hGroup,
+            [In] int hrMasterquality,
+            [In] int hrMastererror,
+            [In] int dwCount,
+            [In] IntPtr phClientItems,
+            [In] IntPtr pvValues,
+            [In] IntPtr pwQualities,
+            [In] IntPtr pftTimeStamps,
+            [In] IntPtr ppErrors);
 
         void OnReadComplete(
-            [In]											int dwTransid,
-            [In]											int hGroup,
-            [In]											int hrMasterquality,
-            [In]											int hrMastererror,
-            [In]											int dwCount,
-            [In]											IntPtr phClientItems,
-            [In]											IntPtr pvValues,
-            [In]											IntPtr pwQualities,
-            [In]											IntPtr pftTimeStamps,
-            [In]											IntPtr ppErrors);
+            [In] int dwTransid,
+            [In] int hGroup,
+            [In] int hrMasterquality,
+            [In] int hrMastererror,
+            [In] int dwCount,
+            [In] IntPtr phClientItems,
+            [In] IntPtr pvValues,
+            [In] IntPtr pwQualities,
+            [In] IntPtr pftTimeStamps,
+            [In] IntPtr ppErrors);
 
         void OnWriteComplete(
-            [In]											int dwTransid,
-            [In]											int hGroup,
-            [In]											int hrMastererr,
-            [In]											int dwCount,
-            [In]											IntPtr pClienthandles,
-            [In]											IntPtr ppErrors);
+            [In] int dwTransid,
+            [In] int hGroup,
+            [In] int hrMastererr,
+            [In] int dwCount,
+            [In] IntPtr pClienthandles,
+            [In] IntPtr ppErrors);
 
         void OnCancelComplete(
-            [In]											int dwTransid,
-            [In]											int hGroup);
+            [In] int dwTransid,
+            [In] int hGroup);
 
     }	// interface IOPCDataCallback
 
@@ -767,17 +767,17 @@ namespace OPC.Data.Interface
     public interface IEnumOPCItemAttributes
     {
         void Next(
-            [In]											int celt,
-            [Out]										out	IntPtr ppItemArray,
-            [Out]										out int pceltFetched);
+            [In] int celt,
+            [Out] out IntPtr ppItemArray,
+            [Out] out int pceltFetched);
 
         void Skip(
-            [In]											int celt);
+            [In] int celt);
 
         void Reset();
 
         void Clone(
-            [Out, MarshalAs(UnmanagedType.Interface)]	out	IEnumOPCItemAttributes ppUnk);
+            [Out, MarshalAs(UnmanagedType.Interface)] out IEnumOPCItemAttributes ppUnk);
 
     }	// interface IEnumOPCItemAttributes
 

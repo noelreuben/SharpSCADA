@@ -3,10 +3,10 @@ using System.Windows.Controls;
 
 namespace HMIControl
 {
-    public class HVDial : Dial 
+    public class HVDial : Dial
     {
         public static readonly DependencyProperty OrientationProperty = DependencyProperty.Register("Orientation", typeof(Orientation), typeof(Dial));
-       
+
         public Orientation Orientation
         {
             get

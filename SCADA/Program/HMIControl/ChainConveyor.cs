@@ -12,17 +12,17 @@ namespace HMIControl
     {
         static ChainConveyor()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChainConveyor), new FrameworkPropertyMetadata(typeof(ChainConveyor)));            
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ChainConveyor), new FrameworkPropertyMetadata(typeof(ChainConveyor)));
         }
         //State 属性保留，不作显示用
-        public static DependencyProperty WorkingProperty = 
+        public static DependencyProperty WorkingProperty =
             DependencyProperty.Register("Working", typeof(bool), typeof(ChainConveyor),
-            new PropertyMetadata(new PropertyChangedCallback(OnValueChanged)));        
+            new PropertyMetadata(new PropertyChangedCallback(OnValueChanged)));
 
         public static DependencyProperty TransformProperty =
             DependencyProperty.Register("Transform", typeof(bool), typeof(ChainConveyor),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender,
-                (obj, args) => 
+                (obj, args) =>
                 {
                     var convey = obj as ChainConveyor;
                     if (convey != null) convey.RenderTransform = new System.Windows.Media.ScaleTransform(convey.Transform ? -1 : 1, 1, convey.ActualWidth / 2, convey.ActualHeight / 2);
@@ -66,7 +66,7 @@ namespace HMIControl
             var w1 = 26 / this.ActualWidth;
             var w2 = (this.ActualWidth - 21) / this.ActualWidth;
 
-            return 
+            return
                 new LinkPosition[2]
                 {
                     new  LinkPosition(new Point(w1 , 0),ConnectOrientation.Top),
@@ -88,9 +88,9 @@ namespace HMIControl
                     if (_funcRun != null)
                     {
                         return delegate { Working = _funcRun(); };
-                        
+
                     }
-                    else return null;                
+                    else return null;
             }
             return base.SetTagReader(key, tagChanged);
         }

@@ -33,7 +33,7 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[1]
-                {  
+                {
                     new  LinkPosition(new Point(0.42,1.0),ConnectOrientation.Bottom),
                 };
         }

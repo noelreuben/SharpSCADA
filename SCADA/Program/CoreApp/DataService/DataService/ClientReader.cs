@@ -421,7 +421,7 @@ namespace DataService
             int len = itemArray.Length;
             byte[] bt = new byte[4];
             byte[] data = new byte[3 + len * 2];
-            int j=0;
+            int j = 0;
             data[j++] = fctHead;
             data[j++] = fctReadMultiple;
             data[j++] = source == DataSource.Cache ? (byte)0 : (byte)1;
@@ -444,8 +444,8 @@ namespace DataService
             j = 2;
             if (error == SocketError.Success)
             {
-                DateTime time=DateTime.UtcNow;
-                Storage value=Storage.Empty;
+                DateTime time = DateTime.UtcNow;
+                Storage value = Storage.Empty;
                 for (int i = 0; i < len; i++)
                 {
                     ITag tag = itemArray[i];

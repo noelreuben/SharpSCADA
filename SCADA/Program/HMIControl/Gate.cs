@@ -11,8 +11,8 @@ namespace HMIControl
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Gate), new FrameworkPropertyMetadata(typeof(Gate)));
         }
-        
-        public static readonly DependencyProperty GateOpenProperty = 
+
+        public static readonly DependencyProperty GateOpenProperty =
             DependencyProperty.Register("GateOpen", typeof(bool), typeof(Gate),
             new PropertyMetadata(new PropertyChangedCallback(OnValueChanged)));
 
@@ -77,7 +77,7 @@ namespace HMIControl
                     {
                         return delegate { GateClose = _funcGateClose(); };
                     }
-                    else return null;                
+                    else return null;
             }
             return base.SetTagReader(key, tagChanged);
         }

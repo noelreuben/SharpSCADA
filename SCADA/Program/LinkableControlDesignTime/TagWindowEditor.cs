@@ -43,7 +43,7 @@ namespace HMIControl.VisualStudio.Design
                             }
                         }
                     }
-                    catch(Exception er)
+                    catch (Exception er)
                     {
                         continue;
                     }

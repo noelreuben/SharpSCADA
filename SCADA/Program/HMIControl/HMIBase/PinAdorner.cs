@@ -38,7 +38,7 @@ namespace HMIControl
                     hitLink = value;
 
                     if (hitLink != null) hitLink.IsLinkDragOver = true;
-                }              
+                }
             }
         }
 
@@ -90,7 +90,7 @@ namespace HMIControl
         protected override void OnRender(DrawingContext dc)
         {
             base.OnRender(dc);
-            dc.DrawGeometry(null, drawingPen, this.linkLine);            
+            dc.DrawGeometry(null, drawingPen, this.linkLine);
             dc.DrawRectangle(Brushes.Transparent, null, new Rect(RenderSize));
             // without a background the OnMouseMove event would not be fired
             // Alternative: implement a Canvas as a child of this adorner, like
@@ -120,7 +120,7 @@ namespace HMIControl
 
             return geometry;
         }
-        
+
         private void HitTesting(Point p)
         {
             var element = (srcPin.Parent as ControlAdorner).AdornedElement;
@@ -132,7 +132,7 @@ namespace HMIControl
                 if (selectedObj is LinkableControl && selectedObj != element)
                 {
                     HitLinkableControl = selectedObj as LinkableControl;
-                    
+
                     AdornerLayer layer = AdornerLayer.GetAdornerLayer(HitLinkableControl);
                     PointHitTestParameters param = new PointHitTestParameters(designCanvas.TranslatePoint(p, layer));
                     VisualTreeHelper.HitTest(layer, null, new HitTestResultCallback(HitTestResultCB1), param);

@@ -40,7 +40,7 @@ namespace HMIControl
             Brush brush2 = new SolidColorBrush(color);
             Brush brush3 = color.CreateLinearTwoGradientsBrush(90.0, -80, 80);
             Pen pen = new Pen(brush, StrokeThickness);
-            
+
             drawingContext.PushTransform(new RotateTransform(450 - this.StartAngle, width, height));
             StreamGeometry geometry;
             switch (Design)
@@ -58,7 +58,7 @@ namespace HMIControl
                     drawingContext.DrawEllipse(brush2, null, point, width * 1.2, width * 1.2);
                     break;
                 case NeedleDesign.Classic:
-                    drawingContext.DrawLine(new Pen(Brushes.Blue,5),new Point(width, 0), new Point(width, 1.3 * height));
+                    drawingContext.DrawLine(new Pen(Brushes.Blue, 5), new Point(width, 0), new Point(width, 1.3 * height));
                     drawingContext.DrawEllipse(brush1, pen, point, width * 1.5, width * 1.5);
                     drawingContext.DrawEllipse(brush2, null, point, width * 1.2, width * 1.2);
                     break;
@@ -77,7 +77,7 @@ namespace HMIControl
                     drawingContext.DrawLine(pen, new Point(width, 0), new Point(width, height));
                     break;
             }
-        
+
             //base.OnRender(drawingContext);
         }
 

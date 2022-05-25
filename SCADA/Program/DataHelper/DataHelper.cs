@@ -138,7 +138,7 @@ namespace DatabaseLib
         }
 
         public static string ReaderToCsv(IDataReader reader)
-        {  
+        {
             StringBuilder sb = new StringBuilder();
             var colcount = reader.FieldCount;
             while (reader.Read())

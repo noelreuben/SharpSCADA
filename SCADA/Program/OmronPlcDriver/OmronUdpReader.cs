@@ -522,7 +522,7 @@ namespace OmronPlcDriver
             else
                 return new ItemData<uint>((uint)IPAddress.HostToNetworkOrder(BitConverter.ToInt32(data, 0)), 0, QUALITIES.QUALITY_GOOD);
         }
-     
+
         public ItemData<ushort> ReadUInt16(DeviceAddress address)
         {
             byte[] data = WriteSyncData(CreateReadHeader(PcNodeId, address.Start, 1, (byte)address.DBNumber, (byte)address.Area));

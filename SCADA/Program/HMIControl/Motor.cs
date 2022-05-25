@@ -12,7 +12,7 @@ namespace HMIControl
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Motor), new FrameworkPropertyMetadata(typeof(Motor)));
         }
 
-        public static readonly DependencyProperty RunningProperty = 
+        public static readonly DependencyProperty RunningProperty =
             DependencyProperty.Register("Running", typeof(bool), typeof(Motor),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender, new PropertyChangedCallback(OnValueChanged)));
 
@@ -31,7 +31,7 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[2]
-                {  
+                {
                     new  LinkPosition(new Point(0,0.5),ConnectOrientation.Left),
                        new  LinkPosition(new Point(1,0.5),ConnectOrientation.Right),
                 };

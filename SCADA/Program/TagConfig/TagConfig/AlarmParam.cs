@@ -344,35 +344,35 @@ namespace TagConfig
         }
     }
 }
-        //NONE = 0,
-        //BOOL = 1,
-        //BYTE = 3,
-        //SHORT = 4,
-        //WORD = 5,
-        //TIME = 6,
-        //INT = 7,
-        //FLOAT = 8,
-        //SYS = 9,
-        //STR = 11
+//NONE = 0,
+//BOOL = 1,
+//BYTE = 3,
+//SHORT = 4,
+//WORD = 5,
+//TIME = 6,
+//INT = 7,
+//FLOAT = 8,
+//SYS = 9,
+//STR = 11
 
 
-        //None = 0,
-        //LoLo = 1,
-        //Low = 2,
-        //High = 4,
-        //HiHi = 8,
-        //MajDev = 16,
-        //MinDev = 32,
-        //Dsc = 64,
-        //BadPV = 128,
-        //MajROC = 256,
-        //MinROC = 512
+//None = 0,
+//LoLo = 1,
+//Low = 2,
+//High = 4,
+//HiHi = 8,
+//MajDev = 16,
+//MinDev = 32,
+//Dsc = 64,
+//BadPV = 128,
+//MajROC = 256,
+//MinROC = 512
 
-        //Error = 7,
-        //High = 6,
-        //MediumHigh = 5,
-        //Medium = 4,
-        //MediumLow = 3,
-        //Low = 2,
-        //Information = 1,
-        //Normal = 0
+//Error = 7,
+//High = 6,
+//MediumHigh = 5,
+//Medium = 4,
+//MediumLow = 3,
+//Low = 2,
+//Information = 1,
+//Normal = 0

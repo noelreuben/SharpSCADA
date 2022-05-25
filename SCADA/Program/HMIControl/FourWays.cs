@@ -14,7 +14,7 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[4]
-                {  
+                {
                     new  LinkPosition(new Point(0.5,0),ConnectOrientation.Top),
                     new  LinkPosition(new Point(0.5,1),ConnectOrientation.Bottom),
                     new  LinkPosition(new Point(0.05,0.85),ConnectOrientation.Left),
@@ -24,7 +24,7 @@ namespace HMIControl
 
         public override string[] GetActions()
         {
-            return new string[] { TagActions.DEVICENAME, TagActions.VISIBLE, TagActions.CAPTION, TagActions.LEFT, TagActions.RIGHT, TagActions.MID }; 
+            return new string[] { TagActions.DEVICENAME, TagActions.VISIBLE, TagActions.CAPTION, TagActions.LEFT, TagActions.RIGHT, TagActions.MID };
         }
 
         public override Action SetTagReader(string key, Delegate tagChanged)

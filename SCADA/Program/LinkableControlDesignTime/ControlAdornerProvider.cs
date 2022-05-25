@@ -71,8 +71,8 @@ namespace HMIControl.VisualStudio.Design
             }
         }
 
-        static readonly Dictionary<ConnectOrientation, string> omap = new Dictionary<ConnectOrientation, string> 
-        { { ConnectOrientation.Left, "LeftPin" }, { ConnectOrientation.Right, "RightPin" }, 
+        static readonly Dictionary<ConnectOrientation, string> omap = new Dictionary<ConnectOrientation, string>
+        { { ConnectOrientation.Left, "LeftPin" }, { ConnectOrientation.Right, "RightPin" },
         { ConnectOrientation.Top, "TopPin" }, { ConnectOrientation.Bottom, "BottomPin" },{ ConnectOrientation.None, "" } };
         void pinAdorner_MouseUp(object sender, MouseButtonEventArgs e)
         {

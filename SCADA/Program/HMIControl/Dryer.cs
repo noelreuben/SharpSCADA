@@ -27,14 +27,14 @@ namespace HMIControl
             var conveyor4_motor = base.GetTemplateChild("conveyor4_motor") as Motor;
             var deduster1_motor = base.GetTemplateChild("deduster1_motor") as Motor;
             var deduster2_motor = base.GetTemplateChild("deduster2_motor") as Motor;
-            children = new ITagLink[] { feed_motor,  fan1_motor, fan2_motor, fan3_motor, fan4_motor, fan5_motor, fan6_motor, fan7_motor, 
+            children = new ITagLink[] { feed_motor,  fan1_motor, fan2_motor, fan3_motor, fan4_motor, fan5_motor, fan6_motor, fan7_motor,
                     fan8_motor, conveyor1_motor, conveyor2_motor, conveyor3_motor, conveyor4_motor,deduster1_motor, deduster2_motor };
         }
 
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[2]
-                {  
+                {
                     new  LinkPosition(new Point(0.025,0),ConnectOrientation.Top),
                     new  LinkPosition(new Point(0.202,1),ConnectOrientation.Bottom),
                 };

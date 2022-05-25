@@ -4,9 +4,9 @@ namespace Tuxeip
 {
     public enum Plc_Type { Unknow, PLC5, SLC500, LGX }
 
-    public enum DHP_Channel { Channel_A = 0x01, Channel_B } 
+    public enum DHP_Channel { Channel_A = 0x01, Channel_B }
 
-    public enum Data_Type { UNKNOW, BIT, SINT, TUXINT, DINT, REAL, TIMER, COUNTER } 
+    public enum Data_Type { UNKNOW, BIT, SINT, TUXINT, DINT, REAL, TIMER, COUNTER }
 
     public enum PLC_Data_Type
     {
@@ -21,7 +21,7 @@ namespace Tuxeip
         PLC_ARRAY,
         PLC_ADRESS = 15,
         PLC_BCD
-    } ;
+    };
 
     public enum LGX_Data_Type
     {

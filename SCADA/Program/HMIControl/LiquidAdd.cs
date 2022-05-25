@@ -70,7 +70,7 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[2]
-                {  
+                {
                     new  LinkPosition(new Point(1,0.025),ConnectOrientation.Right),
                     new  LinkPosition(new Point(0.5,0.9),ConnectOrientation.Bottom),
                 };

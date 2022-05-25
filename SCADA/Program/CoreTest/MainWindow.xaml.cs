@@ -75,7 +75,7 @@ namespace CoreTest
             }
             BindingTagWindow(this);
             CommandBindings.AddRange(BindingCommandHandler());
-             var condlist = App.Server.ActivedConditionList as ObservableCollection<ICondition>;
+            var condlist = App.Server.ActivedConditionList as ObservableCollection<ICondition>;
             if (condlist != null)
             {
                 condlist.CollectionChanged += new NotifyCollectionChangedEventHandler(condlist_CollectionChanged);
@@ -189,7 +189,7 @@ namespace CoreTest
                 {
                     App.AddErrorLog(e);
                 }
-                lab1:
+            lab1:
                 continue;
             }
         }
@@ -263,7 +263,7 @@ namespace CoreTest
         {
             var srv = App.Server;
             CommandBindingCollection CommandBindings = new CommandBindingCollection();
-         
+
             return CommandBindings;
         }
     }

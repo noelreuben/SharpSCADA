@@ -46,15 +46,15 @@ namespace HMIControl
 
         #endregion        
 
-        public ControlAdorner LinkableAdorner{ get; set; }//在OnRenderSizeChanged函数中创建
+        public ControlAdorner LinkableAdorner { get; set; }//在OnRenderSizeChanged函数中创建
 
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
             base.OnRenderSizeChanged(sizeInfo);
-            if (DesignerProperties.GetIsInDesignMode(this))            
-            {               
+            if (DesignerProperties.GetIsInDesignMode(this))
+            {
                 AdornerLayer adornerLayer = AdornerLayer.GetAdornerLayer(this);
-                if (adornerLayer != null) 
+                if (adornerLayer != null)
                 {
                     if (LinkableAdorner == null)
                     {

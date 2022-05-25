@@ -30,7 +30,7 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[2]
-                {  
+                {
                     new  LinkPosition(new Point(0.5,0),ConnectOrientation.Top),
                     new  LinkPosition(new Point(0.5,1),ConnectOrientation.Bottom),
                 };
@@ -53,7 +53,7 @@ namespace HMIControl
         //{
         //    switch (key)
         //    {
-                
+
         //        case TagActions.RUN:
         //            var _funcRun = tagChanged as Func<bool>;
         //            if (_funcRun != null)

@@ -7,7 +7,7 @@ namespace HMIControl
         #region  手动更换仓指令
         public static RoutedCommand ManualChangeTarget = new RoutedCommand("ManualChangeTarget", typeof(DeviceCommand));
         public static RoutedCommand ManualChangeOrigin = new RoutedCommand("ManualChangeOrigin", typeof(DeviceCommand));
-        public static RoutedCommand ManualChangeStore  = new RoutedCommand("ManualChangeStore", typeof(DeviceCommand));
+        public static RoutedCommand ManualChangeStore = new RoutedCommand("ManualChangeStore", typeof(DeviceCommand));
 
         #endregion
 

@@ -4,7 +4,7 @@ using System.Windows;
 
 namespace HMIControl
 {
-     [Startable]
+    [Startable]
     public class BeltConveyor : HMIControlBase
     {
         static BeltConveyor()

@@ -36,7 +36,7 @@ namespace HMIControl
             //this.indict.RenderTransform = new RotateTransform(indict.AngleFromValue(newValue));
         }
 
-       
+
 
         internal double SnapToTick(double value)
         {
@@ -44,32 +44,32 @@ namespace HMIControl
             double minimum = base.Minimum;
             double maximum = base.Maximum;
             DoubleCollection ticks = this.Ticks;
-            
+
             if ((ticks != null) && (ticks.Count > 0))
             {
                 for (int i = 0; i < ticks.Count; i++)
                 {
                     double num4 = ticks[i];
-                    if (num4== value)
+                    if (num4 == value)
                     {
                         return value;
                     }
-                    if ((num4<value) && (num4>minimum))
+                    if ((num4 < value) && (num4 > minimum))
                     {
                         minimum = num4;
                     }
-                    else if ((num4>value) &&(num4<maximum))
+                    else if ((num4 > value) && (num4 < maximum))
                     {
                         maximum = num4;
                     }
                 }
             }
-            else if ((this.TickFrequency> 0.0))
+            else if ((this.TickFrequency > 0.0))
             {
                 minimum = base.Minimum + (Math.Round((double)((value - base.Minimum) / base.TickFrequency)) * this.TickFrequency);
                 maximum = Math.Min(base.Maximum, minimum + this.TickFrequency);
             }
-            value = (value>(minimum + maximum) * 0.5) ? maximum : minimum;
+            value = (value > (minimum + maximum) * 0.5) ? maximum : minimum;
             return value;
         }
     }

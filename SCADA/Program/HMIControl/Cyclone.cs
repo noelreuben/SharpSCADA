@@ -22,7 +22,7 @@ namespace HMIControl
                 return (bool)GetValue(HighLevelProperty);
             }
         }
-        
+
         static Cyclone()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Cyclone), new FrameworkPropertyMetadata(typeof(Cyclone)));
@@ -35,7 +35,7 @@ namespace HMIControl
 
         public override string[] GetActions()
         {
-            return new string[] { TagActions.DEVICENAME, TagActions.VISIBLE, TagActions.CAPTION, TagActions.HIGHLEVEL,};
+            return new string[] { TagActions.DEVICENAME, TagActions.VISIBLE, TagActions.CAPTION, TagActions.HIGHLEVEL, };
         }
 
         public override void OnApplyTemplate()
@@ -49,7 +49,7 @@ namespace HMIControl
         public override LinkPosition[] GetLinkPositions()
         {
             return new LinkPosition[3]
-                {  
+                {
                     new  LinkPosition(new Point(0.5,0),ConnectOrientation.Top),
                     new  LinkPosition(new Point(0.4,1),ConnectOrientation.Bottom),
                     new  LinkPosition(new Point(1,0.35),ConnectOrientation.Right)

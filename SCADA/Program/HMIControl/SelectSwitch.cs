@@ -141,21 +141,21 @@ namespace HMIControl
                     var _funcST1 = tagChanged as Func<bool>;
                     if (_funcST1 != null)
                     {
-                        return delegate { if (_funcST1())IsChecked = true; };
+                        return delegate { if (_funcST1()) IsChecked = true; };
                     }
                     else return null;
                 case TagActions.RIGHT:
                     var _funcST2 = tagChanged as Func<bool>;
                     if (_funcST2 != null)
                     {
-                        return delegate { if (_funcST2())IsChecked = false; };
+                        return delegate { if (_funcST2()) IsChecked = false; };
                     }
                     else return null;
                 case TagActions.MID:
                     var _funcST3 = tagChanged as Func<bool>;
                     if (_funcST3 != null)
                     {
-                        return delegate { if (_funcST3())IsChecked = null; };
+                        return delegate { if (_funcST3()) IsChecked = null; };
                     }
                     else return null;
             }

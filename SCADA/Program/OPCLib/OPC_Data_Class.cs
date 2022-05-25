@@ -19,7 +19,7 @@ PARTICULAR PURPOSE.
 
 namespace OPC.Data.Class
 {
-   
+
 
     public class HRESULTS
     {

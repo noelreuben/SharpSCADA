@@ -63,7 +63,7 @@ namespace HMIControl
                 }
             }
             points.Add(linePoints[linePoints.Count - 1]);
-            return points.Count % 2 == 0  ? points : linePoints;
+            return points.Count % 2 == 0 ? points : linePoints;
         }
 
         internal static List<Point> GetDirectLine(ConnectInfo source, ConnectInfo sink)

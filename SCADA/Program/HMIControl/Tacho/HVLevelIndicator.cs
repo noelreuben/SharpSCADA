@@ -9,7 +9,7 @@ namespace HMIControl
     {
         protected override void OnRender(DrawingContext drawingContext)
         {
-            double scale; 
+            double scale;
             double minimum = this.Minimum;
             double maximum = this.Maximum;
             double origin = base.Origin;
